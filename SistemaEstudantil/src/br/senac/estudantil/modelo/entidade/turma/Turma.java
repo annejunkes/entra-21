@@ -1,7 +1,7 @@
-package classes;
+package br.senac.estudantil.modelo.entidade.turma;
 
-import modelo.entidade.pessoa.Aluno;
-import modelo.entidade.pessoa.Professor;
+import br.senac.estudantil.modelo.entidade.pessoa.aluno.Aluno;
+import br.senac.estudantil.modelo.entidade.pessoa.empregado.professor.Professor;
 
 public class Turma {
 	

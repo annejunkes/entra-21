@@ -1,6 +1,4 @@
-package modelo.entidade.pessoa;
-
-import modelo.entidade.pessoa.empregado.Empregado;
+package br.senac.estudantil.modelo.entidade.pessoa.empregado;
 
 public interface RH {
 	

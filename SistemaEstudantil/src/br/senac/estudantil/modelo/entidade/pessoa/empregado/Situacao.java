@@ -1,4 +1,4 @@
-package modelo.entidade.pessoa;
+package br.senac.estudantil.modelo.entidade.pessoa.empregado;
 
 public enum Situacao {
 	
