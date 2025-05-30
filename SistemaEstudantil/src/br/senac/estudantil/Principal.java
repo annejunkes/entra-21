@@ -1,5 +1,8 @@
 package br.senac.estudantil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.senac.estudantil.modelo.entidade.pessoa.empregado.Empregado;
 import br.senac.estudantil.modelo.entidade.pessoa.empregado.diretor.Diretor;
 import br.senac.estudantil.modelo.entidade.pessoa.empregado.professor.Professor;
@@ -12,16 +15,18 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		Empregado[] empregados = new Empregado[3];
+		
+		
+		List<Empregado> empregados = new ArrayList<>();
 		
 		try {
 		
-		empregados[0]= new Professor("e", "Kubischeck", "188.134.222-45", 3000);
+		empregados.add(new Professor("e", "Kubischeck", "188.134.222-45", 3000));
 		
+		empregados.add(new Diretor("Juscelino", "Kubischeck", "188.134.222-45", 3000));
 		
-		empregados[1]= new Diretor("Juscelino", "Kubischeck", "188.134.222-45", 3000);
-		
-		empregados[2]= new Professor("Juscelino", "Kubischeck", "", 3000);
+		empregados.add(new Professor("Juscelino", "Kubischeck", "", 3000));
+
 		
 		for(Empregado empregado : empregados) {
 			System.out.println(empregado.calcularSalario());

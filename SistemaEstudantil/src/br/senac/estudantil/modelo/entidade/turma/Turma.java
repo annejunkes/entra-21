@@ -1,5 +1,8 @@
 package br.senac.estudantil.modelo.entidade.turma;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.senac.estudantil.modelo.entidade.pessoa.aluno.Aluno;
 import br.senac.estudantil.modelo.entidade.pessoa.empregado.professor.Professor;
 
@@ -8,23 +11,19 @@ public class Turma {
 	private String codigo;
 	private byte cargaHoraria;
 	private Professor professor;
-	private Aluno[] alunos;
-	private final static byte TAMANHO_TURMA=10;
-	private int quantidadeAlunos;
+	private List<Aluno> alunos;
 	
 	public Turma(String codigo, byte cargaHoraria, Professor professor) {
 		setCodigo(codigo);
 		setCargaHoraria(cargaHoraria);
 		setProfessor(professor);
-		alunos = new Aluno[TAMANHO_TURMA];
-		quantidadeAlunos=0;
+		alunos = new ArrayList<>();
 	}
 	
 	public Turma(String codigo, byte cargaHoraria) {
 		setCodigo(codigo);
 		setCargaHoraria(cargaHoraria);
-		alunos = new Aluno[TAMANHO_TURMA];
-		quantidadeAlunos=0;
+		alunos = new ArrayList<>();
 	}
 	
 	public Turma(String codigo) {
@@ -57,51 +56,15 @@ public class Turma {
 	
 	public boolean adicionarAluno(Aluno aluno) {
 		
-		if(TAMANHO_TURMA == quantidadeAlunos) {
-			return false;
+		return alunos.add(aluno);
 		}
-		
-		for(int i=0; i<TAMANHO_TURMA; i++) {
-			
-			if(alunos[i].getCpf().equals(aluno.getCpf())) {
-			return false;
-		}
-		}
-		
-		alunos[quantidadeAlunos]=aluno;
-		quantidadeAlunos++;
-		
-		
-		return true;
-	}
 	
 	public boolean removerAluno(Aluno aluno) {
 		
-		if(TAMANHO_TURMA == quantidadeAlunos) {
-			return false;
-		}
-		
-		for(int i=0; i<TAMANHO_TURMA; i++) {
-			
-			if(alunos[i].getCpf().equals(aluno.getCpf())) {
-			alunos[i]=null;
-			quantidadeAlunos--;
-			
-			return true;
-		}
-		}
+		return alunos.remove(aluno);
 	}
 		
-		private Aluno[] reorganizarVetor(Aluno[] alunos) {
-			return null;
-		}
 		
-		alunos[quantidadeAlunos]=aluno;
-		quantidadeAlunos++;
-		
-		
-		return true;
-	}
 	
 	
 

@@ -47,5 +47,26 @@ public abstract class Pessoa {
 		}
 		this.nome = nome;
 	}
+	
+	public boolean equals(Object objeto) {
+		
+		if(objeto==null) {
+			return false;
+		}
+		
+		if(this == objeto) {// estao na mesma posicao de memoria?
+			return true;
+		}
+		
+		if(this.getClass() != objeto.getClass()){// sao de classes distintas?
+			return false;
+		}
+		
+		Pessoa pessoa = (Pessoa) objeto;
+		
+		return this.getNome().equals(pessoa.getNome());// adicionar demais gets de pessoa
+		
+
+	}
 
 }
